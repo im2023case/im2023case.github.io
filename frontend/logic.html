@@ -1,0 +1,82 @@
+﻿<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>業務邏輯補充</title>
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="favicon.ico">
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101409725);</script>
+<script async src="//static.getclicky.com/js"></script>
+</head>
+
+<body bgcolor="#000000" style="cursor: default" link="#FFFF00" vlink="#C0C0C0">
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" style="color: #C0C0C0">
+	<tr>
+		<td align="center">
+		<p align="left">
+		<font color="#FFFFFF"><b>網頁端內容</b></font><br>
+		網頁端有接案用戶profile主頁和成功案例的呈現、以及用戶一般設置。提案者可在某個成功案例上&quot;參照此專案發案&quot;或&quot;參照此專案與接案用戶展開咨詢，或直接進入接案者的livechat，在線需求確認，掃碼接案，在線列印契約或下載成pdf（輸入密碼查看契約或登入查看，密碼由接案用戶提供）。串接第三方支付方案、遠端協助專案交付、用戶基本設置。<br>
+		<br>
+		l網頁端live chat會話內容與app中的通訊內容同步，提案者可從live chat中進入接案用戶的需求模型進行發案。livechat 
+		api其實是將在線聊天和需求模型和在一起，調用的是與app相同功能且在網頁中同步呈現，用戶可將帶有ID的聊天api潛入到自己的網站中，便於
+		接案用戶在app裡隨時接受客戶訊息，及語音通話。<br>
+		<br>
+		前端潛入到網站的代碼可參考以下代碼形式：<br>
+		&lt;script type=&quot;text/javascript&quot;&gt;function add_chatinline(){var 
+		hccid=用戶ID;var 
+		nt=document.createElement(&quot;script&quot;);nt.async=true;nt.src=&quot;https://domain.com/livechat?hccid=&quot;+hccid;var 
+		ct=document.getElementsByTagName(&quot;script&quot;)[0];ct.parentNode.insertBefore(nt,ct);}<br>
+		add_chatinline();&lt;/script&gt;<br>
+		<br>
+		接案用戶的profile在網頁端的連結：<br>
+		https://domain.ai/tadaoto<br>
+		不區分發案接案用戶，tadaoto即是用戶名，<br>
+		每個專案對應唯一識別符的連結：<br>
+		https://domain.ai/case?id=5wh5At9DR7<br>
+		是否公開訪問取決於用戶設置，默認僅限提案用戶跟接案用戶查看。<br>
+		需求模型對應唯一識別符的連結：<br>
+		https://domain.ai/model?id=1qknuwb0LG<br>
+		掃碼接案時所提取的內容，是直接進入接案者所能做的專案的需求模型介面。如果用戶在沒有app情形下掃碼會打開接案引導網頁連結的網頁版需求模型頁面，如果已安裝app則直接跳轉到app中的
+		需求模型引導介面。<br>
+		<br>
+		<font color="#FFFFFF"><b>需求模型作用</b></font><br>
+		提案用戶通過掃碼接案動作來進入接案用戶預先設定的需求模型進行發案，或先通過即時通訊向接案用戶咨詢，然後接案用戶透過現有的需求模型幫客戶整理已填選好的需求確認表達，再將其生成網頁連結給提案者在線通過網頁端確認，提案者也可註冊成用戶在app中確認
+		，或加入對方為夥伴，通過向夥伴提案進入接案用戶的需求模型進行發案。<p align="left">
+		接案用戶或提案用戶根據自身業務特點，自由編輯組合創作自己的需求模型，然後以它為基礎為客戶生成不同專案。每次修改需求後征求後會關聯到動態契約內容
+		，如果之前已簽署過契約修改需求後續通知對方，由用戶決定生成是否生成新契約版本，生成新契約將經過請求對方同意之提示。<br>
+		<br>
+		<font color="#FFFFFF"><b>註冊/登入方式</b></font><br>
+		註冊與登入，網頁和app上可同時進行。未註冊成用戶的提案者，無法在未註冊情況下發案或憑空形成一個需求模型<span lang="ja">「</span>需求確認表單<span lang="ja">」</span>，所以需求模型<span lang="ja">「</span>需求確認表單<span lang="ja">」</span>只能由註冊用戶定義。未註冊用戶只能對接案用戶給出的基於某個<span lang="ja">「</span>需求模型<span lang="ja">」</span>所生成的需求確認表單進行確認操作，且以連結形式或QRCODE形式讓客戶完成需求表單的確認，客戶需要修改需求只能註冊，或由接案用戶幫忙操作，一旦
+		提案者註冊成為註冊用戶，再次修改需求，需提示對方確認同意，以此類推。<br>
+		註冊時不區分用戶類型，用戶可以發案也可以接案，可以將接案用戶理解成具有接案功能的升級用戶。默認即為提案用戶email+password即刻，極簡流程，無需確認密碼。email作為首要登入方式，在下面有google,apple,fb,in四個圖標的登入形式。<br>
+		email+password完成後會提示：是否升級為付費增值用戶。<br>
+		“現在升級”，後進入付費方案支付環節。<br>
+		“以後再說”，後進入應用主程式介面，用戶可在設置中點選升級為接案用戶。對於web端確認需求表單，提案者的註冊不是必須的，目的是降低提案者的門檻，但 
+		提案者如希望進一步跟蹤專案流程、需求修訂、完成數位契約的電子簽署或結算，則需要註冊或登入，以引導提案者下載app，最終完成雙邊用戶互評。<br>
+		<br>
+		註冊用戶時的用戶名由系統根據用戶email@之前的字符作為默認用戶名。只要新用戶名沒有被佔用，用戶名允許1年改一次。如果更改用戶名，先前用戶名會重新釋放。profile顯示名稱可是個人名或公司名，profile設置中會有身份類型的選項，1年也只能改一次，個人評分不會被繼承
+		到公司評分，不同身份類型分別保存評分。只有完成電話驗證才能升級為接案用戶，一個電話不能被第二個用戶重複驗證。
+		如果接案用戶想轉型，之前的評分和模型數據只是保存在原來的地方，不會被繼承到轉型行業裡面，即評分在不同行業之間獨立存在。<p align="left">
+		<font color="#FFFFFF"><b>業務地區劃分</b></font><br>
+		United States<br>
+		日本<br>
+		台灣<br>
+		之後高級管理專員可根據需要增加新地區。不同地區下的地區管理員獨立營運管理。<br>
+		不同地區之間的註冊用戶相互獨立，但可以進行跨地區掃描接案建立業務關係。如同 paypal 區分不同地區賬戶，但可以跨區域轉款。</td>
+	</tr>
+	<tr>
+		<td align="center">
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td align="center">
+		&nbsp;</td>
+	</tr>
+</table>
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101409725);</script>
+<script async src="//static.getclicky.com/js"></script>
+<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101409725ns.gif" /></p></noscript>
+</body>
+
+</html>
