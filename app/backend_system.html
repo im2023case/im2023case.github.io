@@ -120,16 +120,20 @@
             <h2>功能管理</h2>
 
             <div class="table-container">
-                <h3>用户管理</h3>
+                <h3>用户管理 (今日新增 20 位，其中升級用戶 5 位 / 全部用戶 2000 位，其中升級用戶 500 位)</h3>
                 <div class="search">
-                    <input type="text" placeholder="搜索用户...">
+                    <input type="text" placeholder="搜索用户..."><br><b>接案者 (15)</b> / 客戶 (7)
                 </div>
                 <div class="sort">
                     <label for="sort-users">排序方式:</label>
                     <select id="sort-users">
-                        <option value="newest">最新注册时间</option>
-                        <option value="name">用户名</option>
-                        <option value="score">评分</option>
+                        <option value="newest">用户编号</option>
+                        <option value="name">评分</option>
+                        <option value="name">榮譽</option>
+                        <option value="score">订单数量</option>
+                        <option value="score">全部订单总额</option>
+                        <option value="score">全部佣金总额</option>
+                        <option value="score">邀請用戶</option>
                     </select>
                 </div>
                 <table>
@@ -138,6 +142,7 @@
                             <th>用户编号</th>
                             <th>用户名</th>
                             <th>评分</th>
+                            <th>榮譽</th>
                             <th>是否升级</th>
                             <th>是否认证</th>
                             <th>注册日期</th>
@@ -145,13 +150,15 @@
                             <th>订单数量</th>
                             <th>全部订单总额</th>
                             <th>全部佣金总额</th>
+                            <th>邀請用戶</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>001</td>
+                            <td>US10000001</td>
                             <td>user1</td>
-                            <td>4.5</td>
+                            <td>7.5</td>
+                            <td>20個勳章<br>2個獎盃</td>
                             <td>是</td>
                             <td>是</td>
                             <td>2024-01-01</td>
@@ -159,37 +166,40 @@
                             <td>10</td>
                             <td>$1000</td>
                             <td>$150</td>
+                            <td>2位升級<br>5位註冊</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="table-container">
-                <h3>订单管理</h3>
+                <h3>订单管理 (今日訂單 20 條，其中佣金訂單 5 條 / 全部訂單 2000 條，其中佣金訂單 500 條)</h3>
                 <div class="search">
                     <input type="text" placeholder="搜索订单...">
                 </div>
                 <table>
                     <thead>
                         <tr>
-                            <th>编号</th>
-                            <th>名称</th>
+                            <th>訂單编号</th>
+                            <th>模板名称</th>
                             <th>金额</th>
                             <th>订单日期</th>
                             <th>交付日期</th>
                             <th>订单状态</th>
-                            <th>用户名</th>
+                            <th>接案者</th>
+                            <th>客戶</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1001</td>
-                            <td>Order A</td>
+                            <td>z2sXfp8vBo5</td>
+                            <td>Interior Design</td>
                             <td>$100</td>
                             <td>2024-01-10</td>
                             <td>2024-01-15</td>
-                            <td>已完成</td>
-                            <td>user1</td>
+                            <td>未付款/已付款/已交付/已取消</td>
+                            <td><a href="#"><font style="color: #FFF;">user1</font></a><br>用戶顯示名</td>
+                            <td><a href="#"><font style="color: #FFF;">client1</font></a><br>智慧世界股份有限..</td>
                         </tr>
                     </tbody>
                 </table>
