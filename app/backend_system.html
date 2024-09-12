@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASEDEEP后台管理系统</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 10px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .credentials, .example {
+            background-color: #222;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .example {
+            color: #aaa;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #444;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+        }
+        td {
+            background-color: #222;
+        }
+        .search, .sort {
+            margin-bottom: 20px;
+        }
+        .search input, .sort select {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>CASEDEEP后台管理系统</h1>
+
+        <div class="section">
+            <h2>高级管理员</h2>
+            <div class="credentials">
+                <p><strong>用户名:</strong> case_admin</p>
+                <p><strong>密码:</strong> Backend6789@</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>创建区域管理员</h2>
+
+            <div class="example">
+                <h3>美国地区管理员</h3>
+                <p><strong>用户名:</strong> case_us</p>
+                <p><strong>密码:</strong> Backend6789@</p>
+                <p><strong>地区:</strong> 美国（单选项，目前3个地区可选）</p>
+                <p><strong>行业:</strong> 全部行业/单选一个行业</p>
+                <p><strong>权限:</strong> 用户管理、订单管理、升级管理、佣金管理、认证管理、邀请管理（可多选）</p>
+            </div>
+
+            <div class="example">
+                <h3>日本地区管理员</h3>
+                <p><strong>用户名:</strong> case_jp</p>
+                <p><strong>密码:</strong> Backend6789@</p>
+                <p><strong>地区:</strong> 日本</p>
+                <p><strong>行业:</strong> 全部行业/单选一个行业</p>
+                <p><strong>权限:</strong> 由高级管理员设置</p>
+            </div>
+
+            <div class="example">
+                <h3>台湾地区管理员</h3>
+                <p><strong>用户名:</strong> case_tw</p>
+                <p><strong>密码:</strong> Backend6789@</p>
+                <p><strong>地区:</strong> 台湾</p>
+                <p><strong>权限:</strong> 由高级管理员设置</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>功能管理</h2>
+
+            <div class="table-container">
+                <h3>用户管理</h3>
+                <div class="search">
+                    <input type="text" placeholder="搜索用户...">
+                </div>
+                <div class="sort">
+                    <label for="sort-users">排序方式:</label>
+                    <select id="sort-users">
+                        <option value="newest">最新注册时间</option>
+                        <option value="name">用户名</option>
+                        <option value="score">评分</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>用户编号</th>
+                            <th>用户名</th>
+                            <th>评分</th>
+                            <th>是否升级</th>
+                            <th>是否认证</th>
+                            <th>注册日期</th>
+                            <th>最新登录日期</th>
+                            <th>订单数量</th>
+                            <th>全部订单总额</th>
+                            <th>全部佣金总额</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>user1</td>
+                            <td>4.5</td>
+                            <td>是</td>
+                            <td>是</td>
+                            <td>2024-01-01</td>
+                            <td>2024-01-15</td>
+                            <td>10</td>
+                            <td>$1000</td>
+                            <td>$150</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <h3>订单管理</h3>
+                <div class="search">
+                    <input type="text" placeholder="搜索订单...">
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>名称</th>
+                            <th>金额</th>
+                            <th>订单日期</th>
+                            <th>交付日期</th>
+                            <th>订单状态</th>
+                            <th>用户名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1001</td>
+                            <td>Order A</td>
+                            <td>$100</td>
+                            <td>2024-01-10</td>
+                            <td>2024-01-15</td>
+                            <td>已完成</td>
+                            <td>user1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <h3>升级管理</h3>
+            </div>
+
+            <div class="table-container">
+                <h3>佣金管理</h3>
+            </div>
+
+            <div class="table-container">
+                <h3>认证管理</h3>
+            </div>
+
+            <div class="table-container">
+                <h3>邀请管理</h3>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
