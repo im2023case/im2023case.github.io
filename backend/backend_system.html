@@ -1,0 +1,435 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CASEDEEP後台管理系統</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #121212;
+                color: #ccc;
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+                font-weight: normal;
+            }
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #1e1e1e;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            }
+            h1, h2 {
+                border-bottom: 2px solid #444;
+                padding-bottom: 10px;
+                font-size: 12px;
+            }
+            .search, .sort {
+                margin-bottom: 20px;
+                display: flex;
+                gap: 10px;
+            }
+            .search input, .sort select {
+                padding: 10px;
+                border: 1px solid #444;
+                border-radius: 5px;
+                background-color: #333;
+                color: #fff;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 10px;
+                background: #222;
+                font-size: 12px;
+            }
+            th, td {
+                padding: 12px;
+                border: 1px solid #444;
+                text-align: left;
+                font-size: 12px;
+            }
+            th {
+                background-color: #444;
+                cursor: pointer;
+                font-size: 12px;
+            }
+            tr:hover {
+                background-color: #333;
+                font-size: 12px;
+            }
+            button {
+                padding: 8px 12px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+<body>
+
+    <div class="container">
+
+        <h1>CASEDEEP後台管理系統</h1>
+
+        <div class="section">
+            <h2>高級管理員（創建區域管理員及設定權限，創建/管理行業分類）</h2>
+            <div class="credentials">
+                <p>用戶名: case_admin</p>
+                <p>密碼: Backend6789@</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>創建區域管理員（由高級管理員創建/管理/個地區用戶/訂單等資訊是獨立的，但用戶之間可以跨地區下訂單）</h2>
+
+            <div class="example">
+                <h3>美國地區管理員</h3>
+                <p>用戶名: case_us</p>
+                <p>密碼: Backend6789@</p>
+                <p>地區: 美國（單選項，目前3個地區可選）</p>
+                <p>行業: 全部行業/單選一個行業</p>
+                <p>權限: 用戶管理、訂單管理、升級管理、佣金管理、認證管理、邀請管理（可多選）</p>
+                <p>幣別符號: $</p>
+            </div>
+
+            <div class="example">
+                <h3>日本地區管理員</h3>
+                <p>用戶名: case_jp</p>
+                <p>密碼: Backend6789@</p>
+                <p>地區: 日本</p>
+                <p>行業: 全部行業/單選一個行業（目前5個行業可選，interior / development / marketing / video / patents，可由高級管理員創建新行業）</p>
+                <p>權限: 由高級管理員管理</p>
+                <p>幣別符號: ¥</p>
+            </div>
+
+            <div class="example">
+                <h3>台灣地區管理員</h3>
+                <p>用戶名: case_tw</p>
+                <p>密碼: Backend6789@</p>
+                <p>地區: 台灣</p>
+                <p>權限: 由高級管理員管理</p>
+                <p>幣別符號: NT$</p>
+            </div>
+        
+        
+            <div class="example">
+                <h3>行業管理（由高級管理員創建/管理）</h3>
+                <p>行業分類顯示名 Interior</p>
+                <p>行業分類網域 interior - ***.com/interior</p>
+                <p>子分類1 Interior Design</p>
+                <p>子分類2 Flooring and Tiling</p>
+                <p>子分類3 Plumbing</p>
+                <p>子分類4 Appliance Installation</p>
+                <p>添加子分類</p>
+            </div>
+
+        </div>
+
+
+        <div style="width: 100%; margin: 20px auto; padding: 20px; background-color: #000; color: #fff;">
+            <h1>業務編號分配格式</h1>
+            <table style="width: 100%; border-collapse: collapse; color: #fff;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #444; padding: 10px; text-align: left;">類型</th>
+                        <th style="border: 1px solid #444; padding: 10px; text-align: left;">範例編號</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #444; padding: 10px;">訂單編號，使用11位Base62編碼格式</td>
+                        <td style="border: 1px solid #444; padding: 10px;">z2sXfp8vBo5</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #444; padding: 10px;">佣金編號</td>
+                        <td style="border: 1px solid #444; padding: 10px;">CO2501232305</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #444; padding: 10px;">升級編號</td>
+                        <td style="border: 1px solid #444; padding: 10px;">UP2501062582</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #444; padding: 10px;">認證編號</td>
+                        <td style="border: 1px solid #444; padding: 10px;">CE2501232345</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #444; padding: 10px;">邀請編號</td>
+                        <td style="border: 1px solid #444; padding: 10px;">IN2501032340</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #444; padding: 10px;">合約編號</td>
+                        <td style="border: 1px solid #444; padding: 10px;">EC2501922160</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #444; padding: 10px;">帳單編號</td>
+                        <td style="border: 1px solid #444; padding: 10px;">BI2501041257</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="section">
+<p><br></p>
+            <div class="table-container">
+                <h3>用戶管理 (本月用戶 20 位，其中升級用戶 5 位 / 全部用戶 2000 位，其中升級用戶 500 位)</h3>
+                <div class="search">
+                    <input type="text" placeholder="搜尋用戶名..."><br><br>接案用戶 (15) / <a href="#"><font style="color: #FFF;">客戶 (7)</font></a>
+                </div>
+                <div class="sort">
+                    <label for="sort-users">排序方式</label>
+                    <select id="sort-users">
+                        <option value="newest">用戶編號</option>
+                        <option value="name">評分</option>
+                        <option value="name">榮譽</option>
+                        <option value="name">訂單數量</option>
+                        <option value="name">全部訂單總額</option>
+                        <option value="name">全部佣金總額</option>
+                        <option value="score">邀請用戶</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>用戶編號</th>
+                            <th>用戶名</th>
+                            <th><a href="#"><font style="color: #FFF;">評分</font></a></th>
+                            <th><a href="#"><font style="color: #FFF;">榮譽</font></a></th>
+                            <th>是否升級</th>
+                            <th>是否認證</th>
+                            <th>行業排名</th>
+                            <th>註冊日期</th>
+                            <th>最新登入日期</th>
+                            <th>訂單數量</th>
+                            <th>全部訂單總額</th>
+                            <th>全部佣金總額</th>
+                            <th>邀請用戶</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>US10000001</td>
+                            <td><a href="#"><font style="color: #FFF;">user1</font></a><br>用戶顯示名</td>
+                            <td>7.5 (25)</td>
+                            <td>20 勳章<br>2 獎盃</td>
+                            <td>是</td>
+                            <td>是</td>
+                            <td>10</td>
+                            <td>2024-01-01</td>
+                            <td>2024-01-15</td>
+                            <td>10</td>
+                            <td>$1000</td>
+                            <td>$150</td>
+                            <td>5 註冊<br>2 升級</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<p><br></p>
+            <div class="table-container">
+                <h3>訂單管理 (本月訂單 20 條，其中佣金訂單 5 條 / 全部訂單 2000 條，其中佣金訂單 500 條)</h3>
+                <div class="search">
+                    <input type="text" placeholder="搜尋訂單編號/用戶名...">
+                </div>
+                <div class="sort">
+                    <label for="sort-users">排序方式</label>
+                    <select id="sort-users">
+                        <option value="newest">訂單日期</option>
+                        <option value="name">模板名稱</option>
+                        <option value="name">訂單金額</option>
+                        <option value="name">佣金金額</option>
+                        <option value="name">佣金比例</option>
+                        <option value="score">訂單狀態</option>
+                    </select>
+                    <label for="sort-users"></label>
+                    <select id="sort-users">
+                        <option value="newest">全部訂單</option>
+                        <option value="score">線上訂單</option>
+                        <option value="score">線下訂單</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>訂單編號</th>
+                            <th>模板名稱</th>
+                            <th>訂單金額</th>
+                            <th>佣金金額</th>
+                            <th>佣金比例</th>
+                            <th>訂單日期</th>
+                            <th>交付日期</th>
+                            <th>訂單狀態</th>
+                            <th>接案用戶</th>
+                            <th>客戶</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#">z2sXfp8vBo5</a></td>
+                            <td>Interior Design</td>
+                            <td>$100</td>
+                            <td>$16.5 / 線下訂單</td>
+                            <td>16.5% / 線下訂單</td>
+                            <td>2024-01-10</td>
+                            <td>2024-01-15</td>
+                            <td>未付款/已付款/已交付/已取消</td>
+                            <td><a href="#"><font style="color: #FFF;">user1</font></a><br>用戶顯示名</td>
+                            <td><a href="#"><font style="color: #FFF;">client1</font></a><br>智慧世界股份有限..</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<p><br></p>
+            <div class="table-container">
+                <h3>升級管理 (本月升級 20 條，其中付款訂單 5 條 / 全部訂單 2000 條，其中付款訂單 500 條)</h3>
+                <div class="search">
+                    <input type="text" placeholder="搜尋升級編號/用戶名...">
+                </div>
+                <div class="sort">
+                    <label for="sort-users">排序方式</label>
+                    <select id="sort-users">
+                        <option value="newest">升級編號</option>
+                        <option value="name">升級金額</option>
+                        <option value="name">升級日期</option>
+                        <option value="name">升級狀態</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>升級編號</th>
+                            <th>升級金額</th>
+                            <th>升級日期</th>
+                            <th>升級狀態</th>
+                            <th>用戶名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>UP2122032542</td>
+                            <td>$28.5</td>
+                            <td>2024-01-10</td>
+                            <td>未付款/已付款/已取消/已退款</td>
+                            <td><a href="#"><font style="color: #FFF;">user1</font></a><br>用戶顯示名</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<p><br></p>
+            <div class="table-container">
+                <h3>佣金管理 (本月佣金 20 條，其中付款佣金 5 條 / 全部佣金 2000 條，其中付款佣金 500 條)</h3>
+                <div class="search">
+                    <input type="text" placeholder="搜尋訂單編號/佣金編號/用戶名...">
+                </div>
+                <div class="sort">
+                    <label for="sort-users">排序方式</label>
+                    <select id="sort-users">
+                        <option value="newest">佣金編號</option>
+                        <option value="name">訂單編號</option>
+                        <option value="name">模板名稱</option>
+                        <option value="name">訂單金額</option>
+                        <option value="name">佣金金額</option>
+                        <option value="name">佣金比例</option>
+                        <option value="name">佣金支付狀態</option>
+                        <option value="name">佣金支付日期</option>
+                        <option value="name">訂單日期</option>
+                        <option value="name">交付日期</option>
+                        <option value="name">訂單狀態</option>
+                        <option value="name">接案用戶</option>
+                        <option value="score">客戶</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>佣金編號</th>
+                            <th>訂單編號</th>
+                            <th>模板名稱</th>
+                            <th>訂單金額</th>
+                            <th>佣金金額</th>
+                            <th>佣金比例</th>
+                            <th>佣金支付狀態</th>
+                            <th>佣金支付日期</th>
+                            <th>訂單日期</th>
+                            <th>交付日期</th>
+                            <th>訂單狀態</th>
+                            <th>接案用戶</th>
+                            <th>客戶</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="#"><font style="color: #FFF;">CO3929232305</font></a></td>
+                            <td><a href="#"><font style="color: #FFF;">z2sXfp8vBo5</font></a></td>
+                            <td>Interior Design</td>
+                            <td>$100</td>
+                            <td>$16.5</td>
+                            <td>16.5%</td>
+                            <td>未支付/已支付</td>
+                            <td>2024-01-10</td>
+                            <td>2024-01-12</td>
+                            <td>待交付</td>
+                            <td>未付款/已付款/已交付/已取消</td>
+                            <td><a href="#"><font style="color: #FFF;">user1</font></a><br>用戶顯示名</td>
+                            <td><a href="#"><font style="color: #FFF;">client1</font></a><br>智慧世界股份有限..</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+<p><br></p>
+            <div class="table-container">
+                <h3>認證管理 (本月認證 20 條，其中付款認證 5 條 / 全部認證 2000 條，其中付款訂單 500 條)</h3>
+                <div class="search">
+                    <input type="text" placeholder="搜尋認證編號/用戶名...">
+                </div>
+                <div class="sort">
+                    <label for="sort-users">排序方式</label>
+                    <select id="sort-users">
+                        <option value="newest">認證編號</option>
+                        <option value="name">認證金額</option>
+                        <option value="name">申請日期</option>
+                        <option value="name">審核日期</option>
+                        <option value="name">付款日期</option>
+                        <option value="score">審核人員</option>
+                    </select>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>認證編號</th>
+                            <th>認證金額</th>
+                            <th>申請日期</th>
+                            <th>審核日期</th>
+                            <th>付款日期</th>
+                            <th>用戶名</th>
+                            <th>審核資料</th>
+                            <th>審核人員</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CE1224232345</td>
+                            <td>$28.5</td>
+                            <td>2024-01-10</td>
+                            <td>2024-01-12/待審核/通過/不通過</td>
+                            <td>2024-01-13/未付款/已付款</td>
+                            <td><a href="#"><font style="color: #FFF;">user1</font></a><br>用戶顯示名</td>
+                            <td>審核資料(顯示申請資料窗口，通過/不通過按鈕)</td>
+                            <td>case_tw_ca01</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </div>
+
+</body>
+</html>
