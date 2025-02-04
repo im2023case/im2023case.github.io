@@ -81,7 +81,7 @@
         <h1>CASEDEEP後台管理系統</h1>
 
         <div class="section">
-            <h2>高級管理員（創建區域管理員及設定權限，創建/管理行業分類）</h2>
+            <h2>高級管理員（創建區域管理員及設定權限）</h2>
             <div class="credentials">
                 <p>用戶名: case_admin</p>
                 <p>密碼: Backend6789@</p>
@@ -89,14 +89,13 @@
         </div>
 
         <div class="section">
-            <h2>創建區域管理員（由高級管理員創建/管理/個地區用戶/訂單等資訊是獨立的，但用戶之間可以跨地區下訂單）</h2>
+            <h2>創建區域管理員（由高級管理員創建/管理）</h2>
 
             <div class="example">
                 <h3>美國地區管理員</h3>
                 <p>用戶名: case_us</p>
                 <p>密碼: Backend6789@</p>
-                <p>地區: 美國（單選項，目前3個地區可選）</p>
-                <p>行業: 全部行業/單選一個行業</p>
+                <p>地區: 美國（單選項，目前5個地區可選）</p>
                 <p>權限: 用戶管理、訂單管理、升級管理、佣金管理、認證管理、邀請管理（可多選）</p>
                 <p>幣別符號: $</p>
             </div>
@@ -106,8 +105,8 @@
                 <p>用戶名: case_jp</p>
                 <p>密碼: Backend6789@</p>
                 <p>地區: 日本</p>
-                <p>行業: 全部行業/單選一個行業（目前5個行業可選，interior / development / marketing / video / patents，可由高級管理員創建新行業）</p>
                 <p>權限: 由高級管理員管理</p>
+                <p>權限: 用戶管理、訂單管理、升級管理、佣金管理、認證管理、邀請管理（可多選）</p>
                 <p>幣別符號: ¥</p>
             </div>
 
@@ -117,6 +116,7 @@
                 <p>密碼: Backend6789@</p>
                 <p>地區: 台灣</p>
                 <p>權限: 由高級管理員管理</p>
+                <p>權限: 用戶管理、訂單管理、升級管理、佣金管理、認證管理、邀請管理（可多選）</p>
                 <p>幣別符號: NT$</p>
             </div>
         
@@ -181,9 +181,10 @@
         <div class="section">
 <p><br></p>
             <div class="table-container">
-                <h3>用戶管理 (本月用戶 20 位，其中升級用戶 5 位 / 全部用戶 2000 位，其中升級用戶 500 位)</h3>
+                <h3>用戶管理 (本月新用戶 20 位，本月升級用戶 5 位 / 全部用戶 2000 位，全部升級用戶 500 位)</h3>
+                UserA (15) / <a href="#"><font style="color: #FFF;">UserB (7)</font></a><br><br>
                 <div class="search">
-                    <input type="text" placeholder="搜尋用戶名..."><br><br>接案用戶 (15) / <a href="#"><font style="color: #FFF;">客戶 (7)</font></a>
+                    <input type="text" placeholder="搜尋用戶名..."><br>
                 </div>
                 <div class="sort">
                     <label for="sort-users">排序方式</label>
@@ -236,7 +237,7 @@
             </div>
 <p><br></p>
             <div class="table-container">
-                <h3>訂單管理 (本月訂單 20 條，其中佣金訂單 5 條 / 全部訂單 2000 條，其中佣金訂單 500 條)</h3>
+                <h3>訂單管理 (本月訂單 20 條，本月佣金訂單 5 條 / 全部訂單 2000 條，全部佣金訂單 500 條)</h3>
                 <div class="search">
                     <input type="text" placeholder="搜尋訂單編號/用戶名...">
                 </div>
@@ -274,7 +275,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href="#">z2sXfp8vBo5</a></td>
+                            <td><a href="#"><font style="color: #FFF;">z2sXfp8vBo5</font></a></td>
                             <td>Interior Design</td>
                             <td>$100</td>
                             <td>$16.5 / 線下訂單</td>
@@ -290,7 +291,7 @@
             </div>
 <p><br></p>
             <div class="table-container">
-                <h3>升級管理 (本月升級 20 條，其中付款訂單 5 條 / 全部訂單 2000 條，其中付款訂單 500 條)</h3>
+                <h3>升級管理 (本月升級 20 條，本月付款訂單 5 條 / 全部訂單 2000 條，全部付款訂單 500 條)</h3>
                 <div class="search">
                     <input type="text" placeholder="搜尋升級編號/用戶名...">
                 </div>
@@ -315,7 +316,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>UP2122032542</td>
+                            <td>UP2501062582</td>
                             <td>$28.5</td>
                             <td>2024-01-10</td>
                             <td>未付款/已付款/已取消/已退款</td>
@@ -326,7 +327,7 @@
             </div>
 <p><br></p>
             <div class="table-container">
-                <h3>佣金管理 (本月佣金 20 條，其中付款佣金 5 條 / 全部佣金 2000 條，其中付款佣金 500 條)</h3>
+                <h3>佣金管理 (本月佣金 20 條，本月付款佣金 5 條 / 全部佣金 2000 條，全部付款佣金 500 條)</h3>
                 <div class="search">
                     <input type="text" placeholder="搜尋訂單編號/佣金編號/用戶名...">
                 </div>
@@ -368,7 +369,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href="#"><font style="color: #FFF;">CO3929232305</font></a></td>
+                            <td><a href="#"><font style="color: #FFF;">CO2501232305</font></a></td>
                             <td><a href="#"><font style="color: #FFF;">z2sXfp8vBo5</font></a></td>
                             <td>Interior Design</td>
                             <td>$100</td>
@@ -387,7 +388,7 @@
             </div>
 <p><br></p>
             <div class="table-container">
-                <h3>認證管理 (本月認證 20 條，其中付款認證 5 條 / 全部認證 2000 條，其中付款訂單 500 條)</h3>
+                <h3>認證管理 (本月認證 20 條，本月付款認證 5 條 / 全部認證 2000 條，全部付款訂單 500 條)</h3>
                 <div class="search">
                     <input type="text" placeholder="搜尋認證編號/用戶名...">
                 </div>
@@ -397,8 +398,8 @@
                         <option value="newest">認證編號</option>
                         <option value="name">認證金額</option>
                         <option value="name">申請日期</option>
-                        <option value="name">審核日期</option>
                         <option value="name">付款日期</option>
+                        <option value="name">審核日期</option>
                         <option value="score">審核人員</option>
                     </select>
                 </div>
@@ -408,22 +409,28 @@
                             <th>認證編號</th>
                             <th>認證金額</th>
                             <th>申請日期</th>
-                            <th>審核日期</th>
                             <th>付款日期</th>
                             <th>用戶名</th>
                             <th>審核資料</th>
+                            <th>初始評分</th>
+                            <th>審核日期</th>
+                            <th>審核歷史</th>
+                            <th>認證狀態</th>
                             <th>審核人員</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>CE1224232345</td>
-                            <td>$28.5</td>
+                            <td>CE2501232345</td>
+                            <td>$250</td>
                             <td>2024-01-10</td>
-                            <td>2024-01-12/待審核/通過/不通過</td>
-                            <td>2024-01-13/未付款/已付款</td>
+                            <td>2024-01-13<br>未付款/已付款</td>
                             <td><a href="#"><font style="color: #FFF;">user1</font></a><br>用戶顯示名</td>
-                            <td>審核資料(顯示申請資料窗口，通過/不通過按鈕)</td>
+                            <td><a href="#"><font style="color: #FFF;">審核資料</font></a><br> (點擊後顯示申請資料PDF預覽窗口，窗口底部帶有通過/不通過/違規撤銷 3個按鈕，其中違規撤銷按鈕只有在通過狀態下才顯示，點擊違規撤銷按鈕後需要輸入一句撤銷理由，然後 確認/取消)</td>
+                            <td>7.5<br><a href="#"><font style="color: #FFF;">更正</font></a></td>
+                            <td>2024-01-12</td>
+                            <td>2024-05-30 通過<br>2024-07-15 違規撤銷（撤銷理由內容）</td>
+                            <td>待審核/通過/未通過/違規撤銷</td>
                             <td>case_tw_ca01</td>
                         </tr>
                     </tbody>
@@ -432,7 +439,7 @@
     </div>
     <p><br></p>
     <div class="table-container">
-        <h3>邀請管理 (本月邀請 20 位，其中升級用戶 5 位 / 全部邀請 2000 位，其中升級用戶 500 位)</h3>
+        <h3>邀請管理 (本月邀請 20 位，本月升級用戶 5 位 / 全部邀請 2000 位，全部升級用戶 500 位)</h3>
         <div class="search">
             <input type="text" placeholder="搜尋邀請編號/用戶名...">
         </div>
